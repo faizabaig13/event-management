@@ -372,7 +372,7 @@
         width: 593px;
         height: 593px;
         left: calc(50% - 593px/2 - 0.5px);
-        top: 88px;
+        top: 158px;
         background: url(../../assets/Birthday\ cake.png);
         border-radius: 0px;
     }
@@ -499,7 +499,7 @@
         width: 500px;
         height: 500px;
         left: calc(50% - 500px/2 + 266px);
-        top: 284px;
+        top: 184px;
         border-radius: 0px;
     }
 }
