@@ -84,7 +84,7 @@ const CreateEvent = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmit(true);
-        await addDoc(collection(db, "properties"),{
+        await addDoc(collection(db, "events"),{
           ...data,
           timestamp : serverTimestamp(),
         });
@@ -112,7 +112,7 @@ const CreateEvent = () => {
          <div className="flex-1 flex flex-col items-center justify-center">
         <form className="flex flex-col items-center" onSubmit={handleSubmit}>
           <h1 className="text-4xl my-6 text-center">
-            Add Your<span className="text-purple-600"> Favourite </span>Property
+            Add Your<span className="text-purple-600"> Event </span>
             Here
           </h1>
           <div className="flex flex-col lg:flex-row lg:gap-8">

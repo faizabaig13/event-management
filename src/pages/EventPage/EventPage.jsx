@@ -4,7 +4,6 @@ import { HiOutlineCalendar, HiOutlineLocationMarker } from "react-icons/hi";
 
 const EventPage = () => {
 
-  
   return (
     <div className="Event-Section">
       <div className="left">
