@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { landingPageImage } from "../../assets";
 import "./LandingPage.css";
 
 const LandingPage = () => {
   return (
     <div className="hero-banner-section">
-      <div className="banner-img" />
+      <img src={landingPageImage} alt="" className="banner-img" />
       <div className="banner-text">
         <div className="headings">
           <div className="banner-heading-1">Imagine if</div>

@@ -1,42 +1,94 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./EventPage.css";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../../firebase";
 import { HiOutlineCalendar, HiOutlineLocationMarker } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const EventPage = () => {
-  return (
-    <div className="Event-Section">
-      <div className="left">
-        <div className="event-text">
-          <div className="event-heading">Birthday Bash</div>
-          <div className="event-host-name">hosted by Elysia</div>
-          <div className="event-date">
-            <div className="date">
-              <div className="event-date-icon">
-                <HiOutlineCalendar size={32} color="#8456EC" />
-              </div>
-              <div className="event-date-time">
-                <div className="date-from">18 August 6:00PM</div>
-                <div className="date-to">to 19 Aug 1:00PM</div>
-              </div>
-            </div>
-          </div>
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    const getEvents = onSnapshot(
+      collection(db, "events"),
+      (snapshot) => {
+        let list = [];
+        snapshot.docs.forEach((doc) => {
+          list.push({ id: doc.id, ...doc.data() });
+        });
+        setEvents(list);
+        setLoading(false);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    return () => {
+      getEvents();
+    };
+  }, []);
 
-          <div className="event-location">
-            <div className="location">
-              <div className="event-location-icon">
-                <HiOutlineLocationMarker size={32} color="#8456EC" />
+  if (events.length < 1) {
+    return (
+      <div className="text-center mt-[30%] text-3xl text-gray-400">
+        Sorry, nothing was found.
+        <br />
+        Add an event now.
+        <br />
+        <Link to="/create-event">
+          <button
+            type="submit"
+            className="mt-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 text-xl font-semibold  rounded-md"
+          >
+            Add event
+          </button>
+        </Link>
+      </div>
+    );
+  } else {
+    return events.map((event, index) => (
+      <div className="Event-Section" key={index}>
+        <div className="left">
+          <div className="event-text">
+            <div className="event-heading">{event.eventName}</div>
+            <div className="event-host-name">hosted by {event.hostName}</div>
+            <div className="event-date">
+              <div className="date">
+                <div className="event-date-icon">
+                  <HiOutlineCalendar size={32} color="#8456EC" />
+                </div>
+                <div className="event-date-time">
+                  <div className="date-from">
+                    {event.startDate} {event.startTime}
+                  </div>
+                  <div className="date-to">
+                    {event.endDate} {event.endTime}
+                  </div>
+                </div>
               </div>
-              <div className="event-location-address">
-                <div className="street-address">London Street</div>
-                <div className="address-code">249980 Paris</div>
+            </div>
+
+            <div className="event-location">
+              <div className="location">
+                <div className="event-location-icon">
+                  <HiOutlineLocationMarker size={32} color="#8456EC" />
+                </div>
+                <div className="event-location-address">
+                  <div className="street-address">{event.location}</div>
+                  <div className="address-code">{event.pincode}</div>
+                </div>
               </div>
             </div>
           </div>
+          <img src={event.img} alt="" className="right" />
         </div>
-        <div className="right" />
+        <Link to="/">
+          <div className="px-5 py-3 rounded-md bg-purple-500 text-white text-center font-medium text-xl">Go back to Home</div>
+        </Link>
       </div>
-    </div>
-  );
+    ));
+  };
 };
 
 export default EventPage;

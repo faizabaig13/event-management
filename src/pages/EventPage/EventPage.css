@@ -74,7 +74,7 @@
 }
 
 .event-date-time {
-    width: 138px;
+    width: 350px;
     height: 18px;
     font-family: 'Helvetica';
     font-style: normal;
@@ -89,7 +89,7 @@
 }
 
 .date-from {
-    width: 138px;
+    width: 300px;
     height: 18px;
     font-family: 'Helvetica';
     font-style: normal;
@@ -104,7 +104,7 @@
 }
 
 .date-to {
-    width: 197px;
+    width: 300px;
     height: 16px;
     font-family: 'Helvetica';
     font-style: normal;
@@ -172,7 +172,7 @@
     align-items: flex-start;
     padding: 0px;
     gap: 3px;
-    width: 109px;
+    width: 350px;
     height: 37px;
     /* Inside auto layout */
     flex: none;
@@ -181,7 +181,7 @@
 }
 
 .street-address {
-    width: 118px;
+    width: 300px;
     height: 18px;
     font-family: 'Helvetica';
     font-style: normal;
@@ -193,22 +193,19 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+    overflow: hidden;
 }
 
 .address-code {
-    width: 152px;
+    width: 300px;
     height: 16px;
     font-family: 'Helvetica';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-    /* identical to box height */
+    overflow: hidden;
     color: #4F4F4F;
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
 .right {
@@ -272,10 +269,6 @@
         gap: 8px;
         width: 277px;
         height: 56px;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 0;
     }
     .event-date-icon {
         display: flex;
@@ -289,40 +282,28 @@
         background: #FFFFFF;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 0;
     }
     .date-from {
-        width: 155px;
+        width: 300px;
         height: 21px;
         font-family: 'Helvetica';
         font-style: normal;
         font-weight: 700;
         font-size: 18px;
         line-height: 21px;
-        /* identical to box height */
         color: #240D57;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 0;
+        overflow: hidden;
     }
     .date-to {
-        width: 253px;
+        width: 300px;
         height: 21px;
         font-family: 'Helvetica';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
-        /* identical to box height */
         color: #4F4F4F;
-        /* Inside auto layout */
-        flex: none;
-        order: 1;
-        flex-grow: 0;
+        overflow: hidden;
     }
     .event-location {
         display: flex;
@@ -339,7 +320,6 @@
         border-radius: 10px;
     }
     .event-location-address {
-        /* Auto layout */
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -348,36 +328,28 @@
         margin-left: 5px;
         width: 277px;
         height: 56px;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
     }
     .street-address {
-        width: 140px;
+        width: 300px;
         height: 21px;
         font-family: 'Helvetica';
         font-style: normal;
         font-weight: 700;
         font-size: 18px;
         line-height: 21px;
-        /* identical to box height */
         color: #240D57;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 0;
+        overflow: hidden;
     }
     .address-code {
-        width: 196px;
+        width: 300px;
         height: 21px;
         font-family: 'Helvetica';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
-        /* identical to box height */
         color: #4F4F4F;
-        /* Inside auto layout */
+        overflow: hidden;
     }
     .event-location-icon {
         display: flex;
@@ -391,7 +363,6 @@
         background: #FFFFFF;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        /* Inside auto layout */
         flex: none;
         order: 0;
         flex-grow: 0;
@@ -425,7 +396,7 @@
     }
     .event-host-name {
         position: absolute;
-        width: 155px;
+        width: 300px;
         height: 15px;
         left: 240px;
         top: 248px;
@@ -442,6 +413,7 @@
         height: 15px;
         left: 240px;
         top: 308px;
+        gap: 10px;
     }
     .event-date-icon {
         display: flex;
@@ -455,31 +427,28 @@
         background: #FFFFFF;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        /* Inside auto layout */
     }
     .date-from {
-        width: 155px;
+        width: 300px;
         height: 21px;
         font-family: 'Helvetica';
         font-style: normal;
         font-weight: 700;
         font-size: 18px;
         line-height: 21px;
-        /* identical to box height */
         color: #240D57;
-        /* Inside auto layout */
+        overflow: hidden;
     }
     .date-to {
-        width: 253px;
+        width: 300px;
         height: 21px;
         font-family: 'Helvetica';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
-        /* identical to box height */
         color: #4F4F4F;
-        /* Inside auto layout */
+        overflow: hidden;
     }
     .event-location {
         position: absolute;
@@ -487,6 +456,7 @@
         height: 15px;
         left: 240px;
         top: 368px;
+        gap: 10px;
     }
     .event-location-icon {
         display: flex;
@@ -500,31 +470,29 @@
         background: #FFFFFF;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        /* Inside auto layout */
         margin-top: -4px;
     }
     .street-address {
-        width: 155px;
+        width: 300px;
         height: 21px;
         font-family: 'Helvetica';
         font-style: normal;
         font-weight: 700;
         font-size: 18px;
         line-height: 21px;
-        /* identical to box height */
         color: #240D57;
+        overflow: hidden;
     }
     .address-code {
-        width: 253px;
+        width: 300px;
         height: 21px;
         font-family: 'Helvetica';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
-        /* identical to box height */
         color: #4F4F4F;
-        /* Inside auto layout */
+        overflow: hidden;
     }
     .right {
         position: absolute;

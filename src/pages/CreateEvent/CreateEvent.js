@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { app, db } from "../../firebase";
 import {
   collection,
@@ -19,7 +19,9 @@ const initialState = {
     startTime : "",
     endTime : "",
     location : "",
-    date : "",
+    pincode: "",
+    startDate : "",
+    endDate : "",
   };
 
 const CreateEvent = () => {
@@ -31,10 +33,12 @@ const CreateEvent = () => {
     const {
       eventName,
       hostName,
-      date,
+      startDate,
+      endDate,
       startTime,
       endTime,
-      location
+      location,
+      pincode
     } = data;
   
     const navigate = useNavigate();
@@ -111,9 +115,9 @@ const CreateEvent = () => {
       )}
          <div className="flex-1 flex flex-col items-center justify-center">
         <form className="flex flex-col items-center" onSubmit={handleSubmit}>
-          <h1 className="text-4xl my-6 text-center">
-            Add Your<span className="text-purple-600"> Event </span>
-            Here
+          <h1 className="text-4xl my-6 text-center font-bold">
+            Add Your<span className="text-purple-600"> Event Here</span>
+            
           </h1>
           <div className="flex flex-col lg:flex-row lg:gap-8">
             <input
@@ -138,18 +142,18 @@ const CreateEvent = () => {
           <div className="flex flex-col lg:flex-row lg:gap-8">
             <input
               type="text"
-              placeholder="Event Date"
-              value={date}
-              name="date"
+              placeholder="Start Date"
+              value={startDate}
+              name="startDate"
               required
               className="outline-none border-none sm:w-[370px] p-[15px] rounded-[10px] bg-[#edf5f3] m-[5px] text-lg"
               onChange={handleChange}
             />
             <input
               type="text"
-              placeholder="Location"
-              value={location}
-              name="location"
+              placeholder="End Date"
+              value={endDate}
+              name="endDate"
               required
               className="outline-none border-none sm:w-[370px] p-[15px] rounded-[10px] bg-[#edf5f3] m-[5px] text-lg"
               onChange={handleChange}
@@ -175,6 +179,26 @@ const CreateEvent = () => {
               onChange={handleChange}
             />
           </div>
+          <div className='flex flex-col lg:flex-row lg:gap-8'>
+          <input
+              type="text"
+              placeholder="Location"
+              value={location}
+              name="location"
+              required
+              className="outline-none border-none sm:w-[370px] p-[15px] rounded-[10px] bg-[#edf5f3] m-[5px] text-lg"
+              onChange={handleChange}
+            />
+             <input
+              type="text"
+              placeholder="Location pincode"
+              value={pincode}
+              name="pincode"
+              required
+              className="outline-none border-none sm:w-[370px] p-[15px] rounded-[10px] bg-[#edf5f3] m-[5px] text-lg"
+              onChange={handleChange}
+            />
+          </div>
           <input
             type="file"
             onChange={(e) => setFile(e.target.files[0])}
@@ -185,9 +209,16 @@ const CreateEvent = () => {
             className={`${progress !== null && progress < 100 ? "bg-gray-300" : "bg-violet-700  hover:bg-violet-800"} text-white text-base px-4 py-2 rounded-lg transition my-5`}
             type="submit"
           >
-            Add
+            Add a event
           </button>
         </form>
+        <Link to="/events">
+          <button type='click' className='bg-violet-500 text-white text-center font-medium px-4 py-2 rounded-md'>
+          See Other Events
+
+          </button>
+          
+          </Link>
       </div>
     </div>
   );
