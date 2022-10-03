@@ -47,12 +47,12 @@ const EventPage = () => {
       </div>
     );
   } else {
-    return events.map((event, index) => (
-      <div className="Event-Section" key={index}>
+    return(
+      <div className="Event-Section">
         <div className="left">
           <div className="event-text">
-            <div className="event-heading">{event.eventName}</div>
-            <div className="event-host-name">hosted by {event.hostName}</div>
+            <div className="event-heading">{events[0].eventName}</div>
+            <div className="event-host-name">hosted by {events[0].hostName}</div>
             <div className="event-date">
               <div className="date">
                 <div className="event-date-icon">
@@ -60,34 +60,36 @@ const EventPage = () => {
                 </div>
                 <div className="event-date-time">
                   <div className="date-from">
-                    {event.startDate} {event.startTime}
+                    {events[0].startDate} {events[0].startTime}
                   </div>
                   <div className="date-to">
-                    {event.endDate} {event.endTime}
+                    {events[0].endDate} {events[0].endTime}
                   </div>
                 </div>
               </div>
             </div>
-
             <div className="event-location">
               <div className="location">
                 <div className="event-location-icon">
                   <HiOutlineLocationMarker size={32} color="#8456EC" />
                 </div>
                 <div className="event-location-address">
-                  <div className="street-address">{event.location}</div>
-                  <div className="address-code">{event.pincode}</div>
+                  <div className="street-address">{events[0].location}</div>
+                  <div className="address-code">{events[0].pincode}</div>
                 </div>
               </div>
             </div>
           </div>
-          <img src={event.img} alt="" className="right" />
+          <img src={events[0].img} alt="" className="right" />
         </div>
-        <Link to="/">
-          <div className="px-5 py-3 rounded-md bg-purple-500 text-white text-center font-medium text-xl">Go back to Home</div>
+        <Link to="/" className="">
+          <div className="px-5 py-3 hidden sm:flex justify-center bg-purple-500 text-white text-center font-medium text-xl">Go back to Home</div>
+        </Link>
+        <Link to="/upcoming-events">
+          <div className="px-5 py-3 hidden sm:flex justify-center bg-purple-500 text-white text-center font-medium text-xl">See Upcoming Events</div>
         </Link>
       </div>
-    ));
+    );
   };
 };
 
