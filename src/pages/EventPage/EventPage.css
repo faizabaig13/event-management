@@ -9,7 +9,7 @@
     font-weight: 700;
     font-size: 28px;
     line-height: 32px;
-    color: #240D57;
+    color: #003a63;
 }
 
 .event-host-name {
@@ -96,7 +96,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-    color: #240D57;
+    color: #003a63;
     /* Inside auto layout */
     flex: none;
     order: 0;
@@ -291,7 +291,7 @@
         font-weight: 700;
         font-size: 18px;
         line-height: 21px;
-        color: #240D57;
+        color: #003a63;
         overflow: hidden;
     }
     .date-to {

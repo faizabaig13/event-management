@@ -6,22 +6,13 @@ import "./LandingPage.css";
 const LandingPage = () => {
   return (
     <div className="hero-banner-section">
-      <img src={landingPageImage} alt="" className="banner-img" />
-      <div className="banner-text">
-        <div className="headings">
-          <div className="banner-heading-1">Imagine if</div>
-          <div className="word-snapchat">Snapchat </div>
-          <div className="banner-heading-2">had events.</div>
-        </div>
 
-        <div className="banner-paragraph">
-          Easily host and share events with your friends across any social
-          media.
-        </div>
-      </div>
+    <h1 className="text-center text-6xl mt-56">Lets Create Your Events</h1>
+    <br />
+    <br />
       <Link to="/create-event">
-        <button className="button">
-          <p className="button-text">🎉 Create my event</p>
+        <button className="btn mt-80 bg-yellow-50 p-5 rounded-md text-black">
+          <p className="text-sky-900">🎉 Create my event</p>
         </button>
       </Link>
     </div>

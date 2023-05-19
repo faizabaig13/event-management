@@ -116,7 +116,7 @@ const CreateEvent = () => {
          <div className="flex-1 flex flex-col items-center justify-center">
         <form className="flex flex-col items-center" onSubmit={handleSubmit}>
           <h1 className="text-4xl my-6 text-center font-bold">
-            Add Your<span className="text-purple-600"> Event Here</span>
+            Add Your<span className="text-sky-600"> Event Here</span>
             
           </h1>
           <div className="flex flex-col lg:flex-row lg:gap-8">
@@ -206,14 +206,14 @@ const CreateEvent = () => {
           />
           <button
             disabled={progress !== null && progress < 100}
-            className={`${progress !== null && progress < 100 ? "bg-gray-300" : "bg-violet-700  hover:bg-violet-800"} text-white text-base px-4 py-2 rounded-lg transition my-5`}
+            className={`${progress !== null && progress < 100 ? "bg-gray-300" : "bg-sky-700  hover:bg--800"} text-white text-base px-4 py-2 rounded-lg transition my-5`}
             type="submit"
           >
             Add a event
           </button>
         </form>
         <Link to="/events">
-          <button type='click' className='bg-violet-500 text-white text-center font-medium px-4 py-2 rounded-md'>
+          <button type='click' className='bg-sky-500 text-white text-center font-medium px-4 py-2 rounded-md'>
           See Other Events
 
           </button>

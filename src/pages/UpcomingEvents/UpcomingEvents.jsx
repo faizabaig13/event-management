@@ -33,7 +33,7 @@ const UpcomingEvents = () => {
         <div className="text-center text-2xl p-2 bg-gray-100 font-bold text-pink-500">
             <Link to="/"> Home</Link>
         </div>
-      <div className="sm:text-6xl xs:text-4xl text-3xl text-center p-2 font-bold text-violet-800">
+      <div className="sm:text-6xl xs:text-4xl text-3xl text-center p-2 font-bold text-sky-800">
         Upcoming Events
       </div>
       <div className="mx-auto">
@@ -56,7 +56,7 @@ const UpcomingEvents = () => {
                   <div className="flex item-center text-sm sm:text-lg">
                     <HiOutlineCalendar
                       size={20}
-                      color="#8456EC"
+                      color="#003a63"
                       className="hidden sm:inline mr-2 mt-1"
                     />
                     from : {event.startDate} {event.startTime} AM <br />
@@ -66,7 +66,7 @@ const UpcomingEvents = () => {
                 <div className="sm:text-lg text-sm font-semibold flex sm:items-center">
                   <HiOutlineLocationMarker
                     size={20}
-                    color="#8456EC"
+                    color="#003a63"
                     className="hidden sm:inline mr-2"
                   />{" "}
                   location: <span className="text-sm sm:text-lg ml-1 overflow-hidden">{event.location}</span> 

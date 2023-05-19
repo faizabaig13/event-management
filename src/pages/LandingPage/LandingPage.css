@@ -8,6 +8,16 @@
     border-radius: 13.2326px;
     object-fit: contain;
 }
+.hero-banner-section{
+    background-color: #1272bc;
+    height: 100vh;
+    color: wheat;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+}
 
 .banner-text {
     display: flex;

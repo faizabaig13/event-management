@@ -39,7 +39,7 @@ const EventPage = () => {
         <Link to="/create-event">
           <button
             type="submit"
-            className="mt-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 text-xl font-semibold  rounded-md"
+            className="mt-5 bg-gradient-to-r from-sky-500 to-blue-500 text-white p-4 text-xl font-semibold  rounded-md"
           >
             Add event
           </button>
@@ -56,7 +56,7 @@ const EventPage = () => {
             <div className="event-date">
               <div className="date">
                 <div className="event-date-icon">
-                  <HiOutlineCalendar size={32} color="#8456EC" />
+                  <HiOutlineCalendar size={32} color="#003a63" />
                 </div>
                 <div className="event-date-time">
                   <div className="date-from">
@@ -71,7 +71,7 @@ const EventPage = () => {
             <div className="event-location">
               <div className="location">
                 <div className="event-location-icon">
-                  <HiOutlineLocationMarker size={32} color="#8456EC" />
+                  <HiOutlineLocationMarker size={32} color="#003a63" />
                 </div>
                 <div className="event-location-address">
                   <div className="street-address">{events[0].location}</div>
@@ -83,10 +83,10 @@ const EventPage = () => {
           <img src={events[0].img} alt="" className="right" />
         </div>
         <Link to="/" className="">
-          <div className="px-5 py-3 hidden sm:flex justify-center bg-purple-500 text-white text-center font-medium text-xl">Go back to Home</div>
+          <div className="px-5 py-3 hidden sm:flex justify-center bg-sky-500 text-white text-center font-medium text-xl">Go back to Home</div>
         </Link>
         <Link to="/upcoming-events">
-          <div className="px-5 py-3 hidden sm:flex justify-center bg-purple-500 text-white text-center font-medium text-xl">See Upcoming Events</div>
+          <div className="px-5 py-3 hidden sm:flex justify-center bg-sky-500 text-white text-center font-medium text-xl">See Upcoming Events</div>
         </Link>
       </div>
     );
